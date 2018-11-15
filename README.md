@@ -22,10 +22,12 @@ We think our audience would be interested in reading about:
 * We could also ask these same questions but with the added variable of gender
 
 # Technical Description
-## Format 
+## Format
+To present our final report, we will build a Shiny app to showcase the results of our research on dogs. The Shiny app will allow for user interaction, allowing users to explore various aspects or trends in the data. To read in data, we plan to use the Public.Enigma API, saving us from downloading a very large .csv file. 
 
-## Wrangling 
+## Data Wrangling and Libraries 
+Our dataset is very large, consisting of over 120,000 rows. Since the dataset is already reasonably well formatted, we will not have to do much reshaping or reformatting of the data. However, we will have to remove possible duplicate rows so that each row corresponds to an unique dog. Additionally, we plan to filter out columns irrelevant to our analysis in order to speed up R data processing.
 
-## Libraries 
+For this project, we anticipate using shiny to build our app and ggplot2 to illustrate plots or graphs.
 
 ## Questions and Challenges
