@@ -7,8 +7,9 @@ shinyServer(function(input, output) {
    
   output$nameplot <- renderPlot({
     age_cat <- input$age
-    names <- most_popular_names(age_cat)
-    ggplot(names) + geom_col(aes(AnimalName, n), fill = "blue") +
+    gender_cat <- input$gender
+    names <- most_popular_names(age_cat, gender_cat)
+    ggplot(names) + geom_col(aes(AnimalName, n), fill = "forestgreen") +
       labs(title = "Top Ten Dog Names")
     
   })
