@@ -67,5 +67,3 @@ most_popular_breeds <- function(age_cat, gender_cat) {
     head(10)
   
 }
-
-

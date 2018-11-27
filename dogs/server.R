@@ -14,6 +14,7 @@ shinyServer(function(input, output) {
       coord_flip()
     
   })
+  
   output$nameplot <- renderPlot({
     age_cat <- input$age
     gender_cat <- input$gender

@@ -8,32 +8,7 @@ shinyUI(fluidPage(
              p("This app...")),
     
     tabPanel(
-      "Dog Names",
-      
-  sidebarLayout(
-    sidebarPanel(
-      selectInput("age",
-                  label = "Age",
-                  choices = list("All Ages" = 1,
-                                 "Puppy (1 year or younger)" = 2,
-                                 "Adult (2 - 6 years)" = 3,
-                                 "Senior (7 years or older)" = 4),
-                  selected = 1),
-      radioButtons("gender",
-                  label = "Gender",
-                  choices = list("All Genders" = 1,
-                                 "Female" = 2,
-                                 "Male" = 3),
-                  selected = 1)
-    ),
-    
-    mainPanel(
-       plotOutput("nameplot")
-    )
-  )
-),
-    
-    tabPanel("Dog Breeds",
+      "Dog Breeds",
     sidebarLayout(
       sidebarPanel(
         selectInput("age",
@@ -49,10 +24,34 @@ shinyUI(fluidPage(
                                   "Female" = 2,
                                   "Male" = 3),
                     selected = 1)
-               ),
-               
-      mainPanel(
+        ),
+        
+        mainPanel(
           plotOutput("breedplot")
+        ))
+    ),
+    
+    tabPanel(
+      "Dog Names",
+      sidebarLayout(
+        sidebarPanel(
+          selectInput("age",
+                      label = "Age",
+                      choices = list("All Ages" = 1,
+                                     "Puppy (1 year or younger)" = 2,
+                                     "Adult (2 - 6 years)" = 3,
+                                     "Senior (7 years or older)" = 4),
+                      selected = 1),
+          radioButtons("gender",
+                       label = "Gender",
+                       choices = list("All Genders" = 1,
+                                      "Female" = 2,
+                                      "Male" = 3),
+                       selected = 1)
+        ),
+        
+        mainPanel(
+          plotOutput("nameplot")
+        )
       )
-    ))
-)))
+    ))))
