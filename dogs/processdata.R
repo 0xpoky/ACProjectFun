@@ -40,3 +40,32 @@ most_popular_names <- function(age_cat, gender_cat) {
     filter(AnimalName != "UNKNOWN" && AnimalName != "NAME NOT PROVIDED" && AnimalName != "N/A") %>% 
     head(10)
 }
+
+most_popular_breeds <- function(age_cat, gender_cat) {
+  date <- as.Date("2016-12-31")
+  names <- select(dogs, BreedName, AnimalGender, AnimalBirthMonth)
+  
+  if (gender_cat == 2) {
+    names <- filter(names, AnimalGender == "F")
+  } else if (gender_cat == 3) {
+    names <- filter(names, AnimalGender == "M")
+  }
+  
+  if (age_cat == 2) {
+    names <- filter(names, date - as.Date(AnimalBirthMonth) < 2 * 365)
+  } else if (age_cat == 3) {
+    names <- filter(names, (date - as.Date(AnimalBirthMonth)) >= 2 * 365) %>%
+      filter((date - as.Date(AnimalBirthMonth)) < 7 * 365)
+  } else if (age_cat == 4) {
+    names <- filter(names, date - as.Date(AnimalBirthMonth) >= 7 * 365)
+  }
+  
+  breeds <- group_by(names, BreedName) %>%
+    count() %>%
+    arrange(desc(n)) %>%
+    filter(BreedName != "Unknown") %>%
+    head(10)
+  
+}
+
+
