@@ -8,17 +8,17 @@ shinyUI(fluidPage(
              p("This app...")),
     
     tabPanel(
-      "Dog Breeds",
+      "Top Breeds",
     sidebarLayout(
       sidebarPanel(
-        selectInput("age",
+        selectInput("age1",
                     label = "Age",
                     choices = list("All Ages" = 1,
                                   "Puppy (1 year or younger)" = 2,
                                   "Adult (2 - 6 years)" = 3,
                                   "Senior (7 years or older)" = 4),
                     selected = 1),
-        radioButtons("gender",
+        radioButtons("gender1",
                     label = "Gender",
                     choices = list("All Genders" = 1,
                                   "Female" = 2,
@@ -32,17 +32,17 @@ shinyUI(fluidPage(
     ),
     
     tabPanel(
-      "Dog Names",
+      "Top Names",
       sidebarLayout(
         sidebarPanel(
-          selectInput("age",
+          selectInput("age2",
                       label = "Age",
                       choices = list("All Ages" = 1,
                                      "Puppy (1 year or younger)" = 2,
                                      "Adult (2 - 6 years)" = 3,
                                      "Senior (7 years or older)" = 4),
                       selected = 1),
-          radioButtons("gender",
+          radioButtons("gender2",
                        label = "Gender",
                        choices = list("All Genders" = 1,
                                       "Female" = 2,
@@ -54,4 +54,10 @@ shinyUI(fluidPage(
           plotOutput("nameplot")
         )
       )
-    ))))
+      
+    ),
+    
+    tabPanel("Explore Dog Breeds",
+             p("coming soon!"))
+    
+    )))
