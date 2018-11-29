@@ -58,6 +58,17 @@ shinyUI(fluidPage(
     ),
     
     tabPanel("Explore Dog Breeds",
-             p("coming soon!"))
+             sidebarLayout(
+               sidebarPanel(
+                 selectizeInput("breed",
+                                label = "Breed",
+                                choices = breeds)
+                 ),
+               
+               mainPanel()
+               
+             )
     
-    )))
+    )
+  )
+))

@@ -1,7 +1,4 @@
 library(shiny)
-library(ggplot2)
-
-source('processdata.R')
 
 shinyServer(function(input, output) {
   
