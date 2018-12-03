@@ -51,7 +51,8 @@ shinyUI(fluidPage(
         ),
         
         mainPanel(
-          plotOutput("nameplot")
+          plotOutput("nameplot"),
+          plotOutput("nametrendsplot")
         )
       )
       
