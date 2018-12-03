@@ -57,7 +57,7 @@ shinyServer(function(input, output) {
     names <- most_popular_names_trends(age_cat, gender_cat)
     ggplot(names, aes(x = as.Date(AnimalBirthMonth), y = n, group = AnimalName)) +
       geom_line(aes(color = AnimalName)) + 
-      labs(title = "Top Ten Dog Names") + 
+      labs(title = "Top Ten Dog Names Over Time") + 
       xlab("Year") +
       ylab("Count") +
       scale_x_date(date_breaks = "years" , date_labels = "%y")
