@@ -62,10 +62,13 @@ shinyUI(fluidPage(
                sidebarPanel(
                  selectizeInput("breed",
                                 label = "Breed",
-                                choices = breeds)
+                                choices = breeds, 
+                                selected = "Dachshund")
                  ),
                
-               mainPanel()
+               mainPanel(
+                 plotOutput("topnamesplot")
+               )
                
              )
     

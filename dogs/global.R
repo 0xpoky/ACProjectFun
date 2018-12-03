@@ -52,6 +52,17 @@ most_popular_names <- function(age_cat, gender_cat) {
   return(names)
 }
 
+most_popular_names_by_breed <- function(breed) {
+  names <- select(dogs, AnimalName, BreedName)
+  names <- filter(names, BreedName == breed)
+  names <- group_by(names, AnimalName) %>%
+    count() %>%
+    arrange(desc(n)) %>%
+    filter(AnimalName != "UNKNOWN" && AnimalName != "NAME NOT PROVIDED" && AnimalName != "N/A") %>% 
+    head(10)
+  names$AnimalName <- reorder(names$AnimalName, names$n)
+  return(names)
+}
 ## Returns a dataset consisting of the counts of the 10 most popular dog breeds for a given age and gender
 ## category. Ages are calculated based on the time difference between the last day of 2016 and a
 ## dog's birth month.
