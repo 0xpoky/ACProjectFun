@@ -27,8 +27,18 @@ shinyServer(function(input, output) {
     if (breed_name != "") {
       names <- most_popular_names_by_breed(breed_name)
       ggplot(names) + geom_col(aes(AnimalName, n), fill = "darkslategray") +
-        labs(title = "Top Dog Names") +
+        labs(title = "Top Names") +
         coord_flip()
     }
   })
+  
+  output$ageHist <- renderPlot({
+    breed_name <- input$breed
+    if (breed_name != "") {
+      ages <- age_data(breed_name)
+      ggplot(ages) + geom_histogram(aes(age), binwidth = 1, fill = "forestgreen") +
+        labs(title = "Distribution of Ages")
+    }
+  })
+  
 })
