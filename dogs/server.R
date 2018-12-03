@@ -24,10 +24,11 @@ shinyServer(function(input, output) {
   
   output$topnamesplot <- renderPlot({
     breed_name <- input$breed
-    names <- most_popular_names_by_breed(breed_name)
-    ggplot(names) + geom_col(aes(AnimalName, n), fill = "darkslategray") +
-      labs(title = "Top Ten Dog Names") +
-      coord_flip()
-    
+    if (breed_name != "") {
+      names <- most_popular_names_by_breed(breed_name)
+      ggplot(names) + geom_col(aes(AnimalName, n), fill = "darkslategray") +
+        labs(title = "Top Dog Names") +
+        coord_flip()
+    }
   })
 })

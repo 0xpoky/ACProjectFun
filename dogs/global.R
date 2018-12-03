@@ -53,9 +53,9 @@ most_popular_names <- function(age_cat, gender_cat) {
 }
 
 most_popular_names_by_breed <- function(breed) {
-  names <- select(dogs, AnimalName, BreedName)
-  names <- filter(names, BreedName == breed)
-  names <- group_by(names, AnimalName) %>%
+  names <- select(dogs, AnimalName, BreedName) %>%
+    filter(BreedName == breed) %>%
+    group_by(AnimalName) %>%
     count() %>%
     arrange(desc(n)) %>%
     filter(AnimalName != "UNKNOWN" && AnimalName != "NAME NOT PROVIDED" && AnimalName != "N/A") %>% 
