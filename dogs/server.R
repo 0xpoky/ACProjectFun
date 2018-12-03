@@ -41,12 +41,12 @@ shinyServer(function(input, output) {
     }
   })
   
-  output$topboroughplot <- renderPlot({
+  output$boroughplot <- renderPlot({
     breed_name <- input$breed
     if (breed_name != "") {
-      borough <- most_popular_boroughs_by_breed(breed_name)
+      borough <- boroughs_by_breed(breed_name)
       ggplot(borough) + geom_col(aes(Borough, n), fill = "orange") +
-        labs(title = "Top Boroughs") +
+        labs(title = "Distribution of Borough of Residence") +
         ylab("Number") 
     }
   })
