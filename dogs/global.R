@@ -55,12 +55,13 @@ most_popular_names <- function(age_cat, gender_cat) {
 # Essentially just groups the ten most popular names by year, and then counts how many
 # dogs had each name in each year, in order to create a time chart.
 most_popular_names_trends <- function(age_cat, gender_cat) {
-  names <- most_popular_names(age_cat, gender_cat)
+  names <- most_popular_names(age_cat, gender_cat) %>% head(6)
   names_list <- select(names, AnimalName)
-  dogs_filtered <- filter(dogs, AnimalName %in% names_list$AnimalName)
-  trends <- group_by(dogs_filtered, AnimalBirthMonth) %>%
+  dogs_filtered <- filter(dogs, AnimalName %in% names_list$AnimalName) %>%
+    mutate(AnimalBirthYear = substring(AnimalBirthMonth, 1, 4))
+  trends <- group_by(dogs_filtered, AnimalBirthYear) %>%
     count(AnimalName) %>%
-    arrange(desc(n))
+    filter(AnimalBirthYear != "2017")
   return(trends)
 }
 
