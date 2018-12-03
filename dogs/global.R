@@ -109,8 +109,9 @@ age_data <- function(breed) {
 boroughs_by_breed <- function(breed) {
   borough <- select(dogs, Borough, BreedName) %>%
     filter(BreedName == breed) %>%
-    mutate(Borough = toupper(Borough)) %>%
-    group_by(Borough) %>%
+    mutate(Borough = toupper(Borough))
+  borough$Borough[borough$Borough == "STATEN IS"] = "STATEN ISLAND"
+  borough <- group_by(borough, Borough) %>%
     count() %>%
     filter(Borough == "BROOKLYN" || Borough == "BRONX" || Borough == "QUEENS"
            || Borough == "STATEN ISLAND" || Borough == "MANHATTAN")
