@@ -68,7 +68,8 @@ shinyUI(fluidPage(
                
                mainPanel(
                  plotOutput("topnamesplot"),
-                 plotOutput("ageHist")
+                 plotOutput("ageHist"),
+                 plotOutput("topboroughplot")
                )
                
              )

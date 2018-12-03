@@ -104,3 +104,15 @@ age_data <- function(breed) {
     filter(BreedName == breed) %>%
     mutate(age = round((date - as.Date(AnimalBirthMonth)) / 365, 1))
 }
+
+## Get top Boroughs 
+most_popular_boroughs_by_breed <- function(breed) {
+  borough <- select(dogs, Borough, BreedName) %>%
+    mutate(Borough = toupper(Borough)) %>%
+    filter(BreedName == breed) %>%
+    group_by(Borough) %>%
+    count() %>%
+    arrange(desc(n)) %>%
+    head(10)
+  return(borough)
+}
