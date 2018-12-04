@@ -1,12 +1,19 @@
 library(shiny)
 
+
+  
 shinyUI(fluidPage(
   
   titlePanel("NYC Dog Data"),
   navbarPage("Dog Data",
     tabPanel("Description",
-             p("This app...")),
-    
+             p("Welcome come to NYC Dog data. In this app you'll be able 
+               to find information regarding top dog breeds, top names, have the 
+               oppertunity to explore differnt dog breads and compare top name,
+               distribution of ages, and distribution of borough of residence.")),
+    mainPanel(
+      img(src='https://media.giphy.com/media/Dkf37ayTUExQ4/giphy.gif', align = "right")),
+   
     tabPanel(
       "Top Breeds",
     sidebarLayout(
