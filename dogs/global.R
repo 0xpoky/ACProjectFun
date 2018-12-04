@@ -14,6 +14,7 @@ dogs <- select(data, AnimalName, AnimalGender, AnimalBirthMonth, BreedName, Boro
 
 rm(data)
 
+## Generate list of breeds
 breed_list <- select(dogs, BreedName) %>%
   unique() %>%
   filter(BreedName != "Unknown")
@@ -52,7 +53,7 @@ most_popular_names <- function(age_cat, gender_cat) {
   return(names)
 }
 
-# Essentially just groups the ten most popular names by year, and then counts how many
+# Essentially just groups the most popular names by year, and then counts how many
 # dogs had each name in each year, in order to create a time chart.
 most_popular_names_trends <- function(age_cat, gender_cat) {
   names <- most_popular_names(age_cat, gender_cat) %>% head(6)
@@ -107,6 +108,19 @@ most_popular_breeds <- function(age_cat, gender_cat) {
     head(10)
   breeds$BreedName <- reorder(breeds$BreedName, breeds$n)
   return(breeds)
+}
+
+# Essentially just groups the most popular breeds by year, and then counts how many
+# dogs had each breed in each year, in order to create a time chart.
+most_popular_breeds_trends <- function(age_cat, gender_cat) {
+  names <- most_popular_breeds(age_cat, gender_cat) %>% head(6)
+  names_list <- select(names, BreedName)
+  dogs_filtered <- filter(dogs, BreedName %in% names_list$BreedName) %>%
+    mutate(AnimalBirthYear = substring(AnimalBirthMonth, 1, 4))
+  trends <- group_by(dogs_filtered, AnimalBirthYear) %>%
+    count(BreedName) %>%
+    filter(AnimalBirthYear != "2017")
+  return(trends)
 }
 
 ## Returns a dataset that includes the ages of dogs of the given breed. Ages are calculated based

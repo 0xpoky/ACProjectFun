@@ -27,7 +27,8 @@ shinyUI(fluidPage(
         ),
         
         mainPanel(
-          plotOutput("breedplot")
+          plotOutput("breedplot"),
+          plotOutput("breedtrendsplot")
         ))
     ),
     
