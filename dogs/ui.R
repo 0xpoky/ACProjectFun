@@ -7,7 +7,7 @@ shinyUI(fluidPage(
   titlePanel("NYC Dog Data"),
   navbarPage("Dog Data",
     tabPanel("Description",
-             p("Welcome come to NYC Dog data. In this app you'll be able 
+             p("Now featuring dogs!. In this app you'll be able 
                to find information regarding top dog breeds, top names, have the 
                oppertunity to explore differnt dog breads and compare top name,
                distribution of ages, and distribution of borough of residence.")),
