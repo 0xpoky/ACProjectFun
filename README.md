@@ -16,10 +16,8 @@ Our audience is intended to be dog lovers in general, because we think this data
 We think our audience would be interested in reading about: 
 * What was the top 10 dog breeds when it comes to gender catagories?
 * How are the top 10 dog breed different when it comes to age?
-* What are the top 10 dog names and the to 6 dog names over time?
-* What breeds of dogs seem to live the longest? 
-* Do certain names correlate with certain breeds?
-* We could also ask these same questions but with the added variable of gender
+* What are the top 10 dog names and the top 6 dog names over time?
+* Based on breeds what are top names, distribution of ages, and distribution of Borough of residence?  
 
 # Technical Description
 ## Format
