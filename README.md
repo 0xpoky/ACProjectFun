@@ -14,9 +14,9 @@ This data is collected through the DOHMH Dog Licensing System in New York City, 
 Our audience is intended to be dog lovers in general, because we think this data will reveal a lot of interesting things about the popularity of certain dog breeds, names, etc. as well as possibly revealing trends in names/breeds that are trending either towards being more popular or less popular. 
 
 We think our audience would be interested in reading about: 
-* What was the most popular name for dogs in 2016?
-* What was the most popular breed of dog in 2016? 
-* What is a common name for older dogs that isn't as popular with younger dogs? 
+* What was the top 10 dog breeds when it comes to gender catagories?
+* How are the top 10 dog breed different when it comes to age?
+* What are the top 10 dog names and the to 6 dog names over time?
 * What breeds of dogs seem to live the longest? 
 * Do certain names correlate with certain breeds?
 * We could also ask these same questions but with the added variable of gender
