@@ -4,7 +4,7 @@
 
 # Our Project
 ## Shiny App
-[NYC Dog Data](https://0xpoky.shinyapps.io/dogs/)
+Click here -> [NYC Dog Data](https://0xpoky.shinyapps.io/dogs/)
 
 ## Data
 We used a public data source on dog registration in New York City, which contains information related to dogs such as names, ages, breeds, etc. and we have analyzed all of these variables in many different ways.
