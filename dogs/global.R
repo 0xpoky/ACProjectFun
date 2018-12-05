@@ -1,6 +1,7 @@
 library('dplyr')
 library('ggplot2')
 library('stringr')
+library('R.utils')
 
 ## Read in dog data and remove duplicates. We assume that if the name, gender, birth month and year, breed,
 ## and geographic information (such as zip code) are the same, then it is referring to the same dog.
