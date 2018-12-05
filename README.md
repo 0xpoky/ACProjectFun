@@ -13,7 +13,7 @@ We used a public data source on dog registration in New York City, which contain
 
 This data is collected through the DOHMH Dog Licensing System in New York City, where residents are required by law to register their dogs with the city government. We accessed it through Enigma Public which provided us with a downloadable .csv file. 
 
-## Audience 
+## Purpose/Audience 
 Our audience is intended to be dog lovers in general, because this data reveals a lot of interesting things about the popularity of certain dog breeds, names, etc. as well as revealing trends in names/breeds that are trending either towards being more popular or less popular.
 
 We think our audience would be interested in reading about: 
